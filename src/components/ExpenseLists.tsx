@@ -3,7 +3,7 @@
 
 interface Expense {
     id:number,
-    name:string,
+    description:string,
     amount:number,
     catgory:string
 }
@@ -19,11 +19,11 @@ function ExpenseLists({expenses, onDelte}:props) {
   return (
 
     
-        <table className="container table table-striped my-5">
+        <table className="container table table-striped my-5 table-responsive">
           <thead>
             <tr>
               <th>Id</th>
-              <th>Name</th>
+              <th>Description</th>
               <th>Catagory</th>
               <th>Amount</th>
               <th>#</th>
@@ -33,7 +33,7 @@ function ExpenseLists({expenses, onDelte}:props) {
             {expenses.map((item) => (
               <tr key={item.id}>
                 <th>{item.id}</th>
-                <td>{item.name}</td>
+                <td>{item.description}</td>
                 <td>{item.catgory}</td>
                 <td>{item.amount}$</td>
                 <td>
