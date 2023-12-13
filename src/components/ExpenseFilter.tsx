@@ -5,7 +5,7 @@ interface props {
 }
 function ExpenseFilter({ onClick }: props) {
   return (
-    <select onChange={(e) => onClick(e.target.value)} className="form-select container">
+    <select onChange={(e) => onClick(e.target.value)} className="form-select container my-4">
       <option selected>All catagories</option>
       {catogories.map((catgory) => (
         <option  value={catgory}>

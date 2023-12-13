@@ -32,8 +32,8 @@ function ExpenseForm({onSubmit}:props) {
   } = useForm<ExpenseFormData>({ resolver: zodResolver(schema) });
 
   return (
-    <form onSubmit={handleSubmit((data)=>onSubmit(data))} className="container my-5" action="">
-      <div className="mb-3">
+    <form onSubmit={handleSubmit((data)=>onSubmit(data))} className="container mt-3 " action="">
+      <div className="mb-2">
         <label className="fw-bold form-label" htmlFor="description">
           Description
         </label>
@@ -47,7 +47,7 @@ function ExpenseForm({onSubmit}:props) {
           <p className="text-danger">{errors.description.message}</p>
         )}
       </div>
-      <div className="mb-3">
+      <div className="mb-2">
         <label className="fw-bold form-label" htmlFor="amount">
           Amount
         </label>
@@ -62,7 +62,7 @@ function ExpenseForm({onSubmit}:props) {
         )}
       </div>
 
-      <div className="mb-3">
+      <div className="mb-2">
         <label className="fw-bold form-label" htmlFor="catgory">
           Catogory
         </label>

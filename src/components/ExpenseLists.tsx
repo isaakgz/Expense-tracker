@@ -19,7 +19,7 @@ function ExpenseLists({expenses, onDelte}:props) {
   return (
 
     
-        <table className="container table table-striped my-5 table-responsive">
+        <table className="container table table-striped  table-responsive">
           <thead>
             <tr>
               <th>Id</th>
