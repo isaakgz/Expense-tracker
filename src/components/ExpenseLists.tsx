@@ -1,0 +1,56 @@
+
+//shaping eaxh expense
+
+interface Expense {
+    id:number,
+    name:string,
+    amount:number,
+    catgory:string
+}
+
+interface props {
+    expenses:Expense[]
+    onDelte:(id:number)=>void
+}
+
+
+function ExpenseLists({expenses, onDelte}:props) {
+ 
+  return (
+    <table className="table table-striped m-4">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Catagory</th>
+          <th>Amount</th>
+          <th>#</th>
+        </tr>
+      </thead>
+      <tbody>
+        {expenses.map((item) => (
+          <tr key={item.id}>
+            <th>{item.id}</th>
+            <td>{item.name}</td>
+            <td>{item.catgory}</td>
+            <td>{item.amount}$</td>
+            <td>
+              <button className="btn btn btn-outline-danger" onClick={()=>onDelte(item.id)}>Delete</button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>Total</th>
+          <td></td>
+          <td></td>
+          <td>${expenses.reduce((acc, expense)=>acc + expense.amount, 0).toFixed(2)}</td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+  );
+}
+
+export default ExpenseLists;
