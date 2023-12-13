@@ -26,7 +26,7 @@ function ExpenseLists({expenses, onDelte}:props) {
               <th>Description</th>
               <th>Catagory</th>
               <th>Amount</th>
-              <th>#</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -35,7 +35,7 @@ function ExpenseLists({expenses, onDelte}:props) {
                 <th>{item.id}</th>
                 <td>{item.description}</td>
                 <td>{item.catgory}</td>
-                <td>{item.amount}$</td>
+                <td>$ {" "}{item.amount}</td>
                 <td>
                   <button className="btn btn btn-outline-danger" onClick={()=>onDelte(item.id)}>Delete</button>
                 </td>
@@ -47,7 +47,7 @@ function ExpenseLists({expenses, onDelte}:props) {
               <th>Total</th>
               <td></td>
               <td></td>
-              <td>${expenses.reduce((acc, expense)=>acc + expense.amount, 0).toFixed(2)}</td>
+              <td>$ {" "}{expenses.reduce((acc, expense)=>acc + expense.amount, 0).toFixed(2)}</td>
               <td></td>
             </tr>
           </tfoot>
