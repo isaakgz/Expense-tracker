@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-    <ExpenseForm/>
+    <ExpenseForm  />
     <ExpenseLists
       expenses={expenses}
       onDelte={(id) => setExpenses(expenses.filter((e) => e.id != id))}
